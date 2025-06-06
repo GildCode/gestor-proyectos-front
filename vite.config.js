@@ -18,8 +18,14 @@ export default defineConfig({
   base: process.env.NODE_ENV === 'production' 
     ? '/gestor-proyectos-front/' 
     : '/',
+  optimizeDeps: {
+    include: ['axios'], // ✅ Fuerza la inclusión de axios para evitar el error de resolución
+  },
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
+    rollupOptions: {
+      external: [], // ✅ Asegura que axios no se trata como dependencia externa
+    }
   }
 })
