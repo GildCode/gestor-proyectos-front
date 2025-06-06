@@ -19,13 +19,13 @@ export default defineConfig({
     ? '/gestor-proyectos-front/' 
     : '/',
   optimizeDeps: {
-    include: ['axios'], // ✅ Fuerza la inclusión de axios para evitar el error de resolución
+    include: ['axios'], 
   },
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
     rollupOptions: {
-      external: [], // ✅ Asegura que axios no se trata como dependencia externa
+      external: [], // 
     }
   }
 })
